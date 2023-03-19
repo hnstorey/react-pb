@@ -5,7 +5,6 @@ export const server_calls = {
         const response = await fetch(`https://nice-statuesque-wren.glitch.me/api/contacts`,
         {
             method: 'GET',
-            mode: "cors",
             headers: {
                 'Content-Type': 'application/json',
                 'x-access-token': `Bearer ${token}`,

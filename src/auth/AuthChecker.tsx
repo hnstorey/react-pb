@@ -7,7 +7,6 @@ interface Props {
     children: React.ReactNode;
 }
 
-
 const AuthChecker = ({ children }: Props) => {
     const navigate = useNavigate();
     //This will just check if the user is logged in; if so, it returns the children
@@ -19,10 +18,9 @@ const AuthChecker = ({ children }: Props) => {
             signInWithPopup(auth, Providers.google)
         }
     }, [])
-
-  return (
-    <>{children}</>
-  )
+    return (
+      <>{children}</>
+    )
 }
 
 export default AuthChecker
