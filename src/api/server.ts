@@ -8,7 +8,6 @@ export const server_calls = {
             headers: {
                 'Content-Type': 'application/json',
                 'x-access-token': `Bearer ${token}`,
-                'Access-Control-Allow-Origin': '*',
             },
         });
 
@@ -27,7 +26,8 @@ export const server_calls = {
             headers: {
                 'Content-Type': 'application/json',
                 'x-access-token': `Bearer ${token}`,
-                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Origin': 'https://nice-statuesque-wren.glitch.me',
+                'Access-Control-Allow-Methods': GET, POST, DELETE,
             },
             body: JSON.stringify(data)
         })
@@ -40,16 +40,15 @@ export const server_calls = {
     },
 
     update: async (id: string, data: any = {}) => {
-        const response = await fetch(`https://nice-statuesque-wren.glitch.me/api/${id}`,
+        const response = await fetch(`https://nice-statuesque-wren.glitch.me/api/contacts/${id}`,
         {
-            method: "PUT",
+            method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 'x-access-token': `Bearer ${token}`,
-                'Access-Control-Allow-Origin': '*',
             },
             body: JSON.stringify(data)
-        })
+        });
 
         if (!response.ok){
             throw new Error(`Failed to update data on server.`)
@@ -59,18 +58,18 @@ export const server_calls = {
     },
 
     delete: async (id:string) => {
-        const response = await fetch(`https://nice-statuesque-wren.glitch.me/api/${id}`,
+        const response = await fetch(`https://nice-statuesque-wren.glitch.me/api/contacts/${id}`,
         {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json',
                 'x-access-token': `Bearer ${token}`,
-                'Access-Control-Allow-Origin': '*',
             }
         })
 
         if (!response.ok){
-            throw new Error(`Failed to delete data on server.`)
+            throw new Error(`Failed to delete data on server.`),
+            console.log(`${id}`)
         }
 
         return;
