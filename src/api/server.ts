@@ -8,6 +8,7 @@ export const server_calls = {
             headers: {
                 'Content-Type': 'application/json',
                 'x-access-token': `Bearer ${token}`,
+                'Access-Control-Allow-Origin': 'https://nice-statuesque-wren.glitch.me'
             },
         });
 
@@ -26,8 +27,7 @@ export const server_calls = {
             headers: {
                 'Content-Type': 'application/json',
                 'x-access-token': `Bearer ${token}`,
-                'Access-Control-Allow-Origin': 'https://nice-statuesque-wren.glitch.me',
-                'Access-Control-Allow-Methods': GET, POST, DELETE,
+                'Access-Control-Allow-Origin': 'https://nice-statuesque-wren.glitch.me'
             },
             body: JSON.stringify(data)
         })
@@ -46,6 +46,7 @@ export const server_calls = {
             headers: {
                 'Content-Type': 'application/json',
                 'x-access-token': `Bearer ${token}`,
+                'Access-Control-Allow-Origin': 'https://nice-statuesque-wren.glitch.me'
             },
             body: JSON.stringify(data)
         });
@@ -64,6 +65,7 @@ export const server_calls = {
             headers: {
                 'Content-Type': 'application/json',
                 'x-access-token': `Bearer ${token}`,
+                'Access-Control-Allow-Origin': 'https://nice-statuesque-wren.glitch.me'
             }
         })
 
